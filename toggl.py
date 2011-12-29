@@ -1,4 +1,4 @@
-import simplejason, urllib2, base64, sys
+import simplejson, urllib2, base64, sys, logging
 
 class Toggl:
     URL = 'https://www.toggl.com/api/'
@@ -20,13 +20,13 @@ class Toggl:
 
         res = urllib2.urlopen(request)
         result = simplejson.load(res)
-        print(results)
+        print(result)
 
 
 if __name__ == '__main__':
      args = sys.argv
-    if len(args) == 1:
-        log.error("\n\nYou need to pass in a toggl.com api key! \n\n")
-    else:
-        t = Toggl(args[1])
-        t.send('me.json')
+     if len(args) == 1:
+         logging.error("\n\nYou need to pass in a toggl.com api key! \n\n")
+     else:
+         t = Toggl(args[1])
+         t.send('me.json')
