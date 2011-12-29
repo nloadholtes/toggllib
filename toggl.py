@@ -20,13 +20,16 @@ class Toggl:
 
         res = urllib2.urlopen(request)
         result = simplejson.load(res)
-        print(result)
+        return result
 
 
 if __name__ == '__main__':
-     args = sys.argv
-     if len(args) == 1:
-         logging.error("\n\nYou need to pass in a toggl.com api key! \n\n")
-     else:
-         t = Toggl(args[1])
-         t.send('me.json')
+    """
+    This main method serves as a test/example usage of this lib.
+    """
+    args = sys.argv
+    if len(args) == 1:
+        logging.error("\n\nYou need to pass in a toggl.com api key! \n\n")
+    else:
+        t = Toggl(args[1])
+        print(t.send('me.json'))
