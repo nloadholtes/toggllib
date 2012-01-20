@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+#
+# toggl.py
+# Nick Loadholtes <nick@ironboundsoftware.com>
+#
+# This class is a thin wrapper around the toggl.com api
+# and is useful for pulling JSON formatted data from
+# toggl.
+
 import simplejson, urllib2, base64, sys, logging
 
 class Toggl:
